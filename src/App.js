@@ -11,8 +11,7 @@ const App = () =>{
       <Header></Header>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Banner />} exact></Route>
-          <Route path="/" element={<Tarjetas/>} exact></Route>
+          <Route path="/" element={<Banner />} exact></Route>          
           <Route path="/categorias" element={<ListaFormCategorias/>} exact></Route>
           <Route path="/productos/form" element={<FormProducto/>} exact></Route>
         </Routes>
