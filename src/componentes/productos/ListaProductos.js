@@ -1,13 +1,14 @@
+import Estados from "../../enums/Estados";
 import ProductoServicios from "../../servicios/ProductoServicios";
 
 const ListaProductos = () => {
     const listaProductos = ProductoServicios.listarProductos();
     let estado;
     if (listaProductos.lengt>0) {
-        estado = "OK";
+        estado =Estados.OK;
     }
     else {
-        estado = "VACIO";
+        estado = Estados.VACIO;
     }
 
     return (
@@ -26,7 +27,7 @@ const ListaProductos = () => {
                     </thead>
                     <tbody>
                         {
-                            estado === "OK" ?
+                            estado === Estados.Ok ?
                                 listaProductos.map((producto) => (
                                     <tr>
                                         <td>{producto.nombre}</td>
@@ -39,9 +40,9 @@ const ListaProductos = () => {
                                         </td>
                                     </tr>
                                 )):
-                                <tr>
+                                (<tr>
                                     <td colSpan="5">No hay datos</td>
-                                </tr>
+                                </tr>)
                         }
 
                     </tbody>
