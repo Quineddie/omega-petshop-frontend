@@ -1,8 +1,8 @@
-import categoriaServicios from "../../servicios/CategoriaServicio";
+import CategoriaServicios from "../../servicios/CategoriaServicio";
 
 
 const ListaFormCategorias = () => {
-    const listaCategorias = categoriaServicios.listarCategorias();
+    const listaCategorias = CategoriaServicios.listarCategorias();
     console.log(listaCategorias);
 
     return (
@@ -19,19 +19,19 @@ const ListaFormCategorias = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {
-                        listaCategorias.map((categoria) => (
-                            <tr key={categoria.id}>
-                                <td>{categoria.nombre}</td>
-                                <td>{categoria.imagen}</td>
-                                <td>{categoria.activo ? "Sí" : "No"}</td>
-                                <td>
-                                    <button className="btn btn-sm btn-success">Editar</button>
-                                    <button className="btn btn-sm btn-danger">Eliminar</button>
-                                </td>
-                            </tr>
-                        ))
-                    }
+                        {
+                            listaCategorias.map((categoria) => (
+                                <tr key={categoria.id}>
+                                    <td>{categoria.nombre}</td>
+                                    <td>{categoria.imagen}</td>
+                                    <td>{categoria.activo ? "Sí" : "No"}</td>
+                                    <td>
+                                        <button className="btn btn-sm btn-success">Editar</button>
+                                        <button className="btn btn-sm btn-danger">Eliminar</button>
+                                    </td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>
