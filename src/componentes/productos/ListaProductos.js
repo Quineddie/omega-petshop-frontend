@@ -30,7 +30,7 @@ const ListaProductos = () => {
                         {
                             estado === Estados.CARGANDO ?
                                 (<tr>
-                                    <td colSpan="5">
+                                    <td colSpan="5" align= "center">
                                         <div class="spinner-border" role="status">
                                             <span class="visually-hidden">Loading...</span>
                                         </div>
