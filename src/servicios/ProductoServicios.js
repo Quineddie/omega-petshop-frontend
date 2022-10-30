@@ -11,7 +11,7 @@ const productos = [
         nombre: "Alimento para gatos Pequeños",
         marca: "Cat Show",
         precio: 11000,
-        categoria: ["Alimento para perros"],
+        categoria: ["Alimento para gatos"],
         imagen: "bolsa_DogShow.jpg",
         disp: true
     }
