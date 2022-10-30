@@ -14,7 +14,7 @@ const ListaProductos = () => {
 
     return (
         <div className="container">
-            <h4>Productos <button className="btn btn-sm btn-success">Añadir Producto</button></h4>
+            <h4> Lista de Productos <a href ="/productos/form" className="btn btn-sm btn-primary ms-3">Añadir Producto</a></h4>
             <div id="tabla">
                 <table className="table table-sm">
                     <thead>
