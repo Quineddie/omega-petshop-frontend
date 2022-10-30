@@ -44,7 +44,7 @@ const ListaProductos = () => {
                                             <td>{producto.precio}</td>
                                             <td>{producto.disp ? "Si" : "No"}</td>
                                             <td>
-                                                <button className="btn btn-sm btn-success me-2">Editar</button>
+                                                <a href={"/productos/form"+producto.id} className="btn btn-sm btn-success me-2">Editar</a>
                                                 <button className="btn btn-sm btn-danger">Eliminar</button>
                                             </td>
                                         </tr>
