@@ -14,7 +14,7 @@ const ListaProductos = () => {
 
     return (
         <div className="container">
-            <h4 className="d-flex justify-content-center">Productos</h4>
+            <h4>Productos <button className="btn btn-sm btn-success">Añadir Producto</button></h4>
             <div id="tabla">
                 <table className="table table-sm">
                     <thead>
