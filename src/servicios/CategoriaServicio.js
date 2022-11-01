@@ -1,22 +1,26 @@
 const categorias = [
     {
         id: 1,
-        nombre: "Alimentos para perros",
+        nombre: "Alimentos para perros", 
         activo: true,
         imagen: "imagen.jpg"
     },
     {
         id: 2,
-        nombre: "Alimentos para gatos",
+        nombre: "Alimentos para gatos", 
         activo: false,
         imagen: "otraimagen.jpg"
     },
 ]
 
-const CategoriaServicio = {};
+const CategoriaServicios = {};
 
-CategoriaServicio.listarCategorias = () => {
-    return categorias;
+CategoriaServicios.listarCategorias = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Uy no, se despapayó");
+        }, 2000)
+    })
 }
 
-export default CategoriaServicio;
+export default CategoriaServicios;
