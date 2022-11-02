@@ -19,8 +19,14 @@ const productos = [
     }
    
 ]
+
 const ProductoServicios = {};
-ProductoServicios.listarProductos = () =>{
-    return productos;
+
+ProductoServicios.listarProductos = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(productos);
+        }, 2000)
+    })
 }
 export default ProductoServicios;
