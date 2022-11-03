@@ -1,4 +1,4 @@
-import CategoriaServicio from "../../servicios/CategoriaServicio";
+import CategoriaServicio from "../../servicios/CategoriaServicios";
 
 const FormProducto = () => {
     const listaCategorias = CategoriaServicio.listarCategorias();

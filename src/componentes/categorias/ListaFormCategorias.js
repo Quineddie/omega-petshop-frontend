@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Estados from "../../enums/Estados";
-import CategoriaServicios from "../../servicios/CategoriaServicio";
+import CategoriaServicios from "../../servicios/CategoriaServicios";
 
 const ListaFormCategorias = () => {
 
