@@ -59,7 +59,7 @@ const FormEdicionCategoria = () => {
 
     useEffect(() => {
        cargarCategoria(); 
-    }, [])
+    },[])
 
     return (
         <div className="container">
