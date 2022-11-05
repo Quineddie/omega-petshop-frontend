@@ -9,6 +9,7 @@ CategoriaServicios.listarCategorias = () => {
 CategoriaServicios.buscarCategorias = (busqueda) => {
     return axios.get("http://localhost:8000/api/categorias?q="+busqueda);
 }
+
 CategoriaServicios.cargarCategoria = (id) => {
     return axios.get("http://localhost:8000/api/categorias/"+id);
 }
@@ -16,9 +17,11 @@ CategoriaServicios.cargarCategoria = (id) => {
 CategoriaServicios.modificarCategoria = (id, body) => {
     return axios.put("http://localhost:8000/api/categorias/"+id, body);
 }
+
 CategoriaServicios.guardarCategorias = (categoria) => {
     return axios.post("http://localhost:8000/api/categorias", categoria);
 }
+
 CategoriaServicios.borrarCategoria = (id) => {
     return axios.delete("http://localhost:8000/api/categorias/"+id);
 }
