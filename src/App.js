@@ -22,6 +22,7 @@ const App = () =>{
           <Route path="/productos/form:id" element={<FormProducto/>} exact></Route>
           <Route path="/clientes" element={<ListadoClientes/>} exact></Route>
           <Route path="/clientes/form" element={<FormClientes/>} exact></Route>
+          <Route path="/clientes/form/:id" element={<FormClientes/>} exact></Route>
         </Routes>
       </BrowserRouter>
     </div>    

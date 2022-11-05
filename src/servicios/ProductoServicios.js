@@ -1,32 +1,13 @@
-const productos = [
-    {
-        id:1,
-        nombre: "Alimento para perros Pequeños",
-        marca: "Dog Show",
-        precio: 12000,
-        categoria: ["Alimento para perros"],
-        imagen: "bolsa_DogShow.jpg",
-        disp: true
-    },
-    {
-        id:2,
-        nombre: "Alimento para gatos Pequeños",
-        marca: "Cat Show",
-        precio: 11000,
-        categoria: ["Alimento para gatos"],
-        imagen: "bolsa_DogShow.jpg",
-        disp: true
-    }
-   
-]
+import axios from "axios";
 
 const ProductoServicios = {};
 
 ProductoServicios.listarProductos = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(productos);
-        }, 2000)
-    })
+    return axios.get("http://localhost:8000/api/productos");
 }
+
+ProductoServicios.guardarProducto = (producto) => {
+    return axios.post("http://localhost:8000/api/productos", producto);
+}
+
 export default ProductoServicios;

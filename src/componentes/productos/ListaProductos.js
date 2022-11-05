@@ -5,20 +5,25 @@ import ProductoServicios from "../../servicios/ProductoServicios";
 
 const ListaProductos = () => {
 
-    const [ estado, setEstado ] = useState(Estados.CARGANDO);
-    const [ listaProductos, setListaproductos ] = useState([]);
+    const [estado, setEstado] = useState(Estados.CARGANDO);
+    const [listaProductos, setListaproductos] = useState([]);
 
-    useEffect(() => {
-        const cargarDatos = async () => {
+    const cargarDatos = async () => {
+        try {
             const respuesta = await ProductoServicios.listarProductos();
-            if (respuesta.length > 0) {
+            if (respuesta.data.length > 0) {
                 setEstado(Estados.OK);
-                setListaproductos(respuesta);
+                setListaproductos(respuesta.data);
             }
             else {
                 setEstado(Estados.VACIO);
             }
+        } catch (error) {
+            console.log(error);
         }
+    }
+
+    useEffect(() => {
         cargarDatos();
     }, [])
 
@@ -38,30 +43,34 @@ const ListaProductos = () => {
                     </thead>
                     <tbody>
                         {
-                            estado === Estados.CARGANDO ? 
-                            (<tr>
-                                <td colSpan="5" align="center">
-                                    <div class="spinner-border text-secondary" role="status">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </td>
-                            </tr>) :
-                            estado === Estados.OK ?
-                                listaProductos.map((producto)=> (
-                                    <tr>
-                                        <td>{producto.nombre}</td>
-                                        <td>{producto.marca}</td>
-                                        <td>{producto.precio}</td>
-                                        <td>{producto.disp ? "Sí" : "No"}</td>
-                                        <td>
-                                            <a href={"/productos/form/"+producto.id} className="btn btn-sm btn-success me-2">Editar</a>
-                                            <button className="btn btn-sm btn-danger">Eliminar</button>
-                                        </td>
-                                    </tr>
-                                )) :
+                            estado === Estados.ERROR ?
                                 (<tr>
-                                    <td colSpan="5">No hay datos</td>
-                                </tr>)
+                                    <td colSpan="5">Ocurrió un error, intente más tarde</td>
+                                </tr>) :
+                                estado === Estados.CARGANDO ?
+                                    (<tr>
+                                        <td colSpan="5" align="center">
+                                            <div className="spinner-border text-secondary" role="status">
+                                                <span className="visually-hidden">Loading...</span>
+                                            </div>
+                                        </td>
+                                    </tr>) :
+                                    estado === Estados.OK ?
+                                        listaProductos.map((producto) => (
+                                            <tr key={producto._id}>
+                                                <td>{producto.nombre}</td>
+                                                <td>{producto.marca}</td>
+                                                <td>{producto.precio}</td>
+                                                <td>{producto.disp ? "Sí" : "No"}</td>
+                                                <td>
+                                                    <a href={"/productos/form/" + producto._id} className="btn btn-sm btn-success me-2">Editar</a>
+                                                    <button className="btn btn-sm btn-danger">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                        )) :
+                                        (<tr>
+                                            <td colSpan="5">No hay datos</td>
+                                        </tr>)
                         }
                     </tbody>
                 </table>

@@ -4,9 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import CategoriaServicios from "../../servicios/CategoriaServicios";
 
 const FormEdicionCategoria = () => {
-    const [ nombre, setNombre ] = useState("");
-    const [ imagen, setImagen ] = useState("");
-    const [ activo, setActivo ] = useState(false);
+    const [nombre, setNombre] = useState("");
+    const [imagen, setImagen] = useState("");
+    const [activo, setActivo] = useState(false);
     const { id } = useParams();
     const navigateTo = useNavigate();
 
@@ -20,15 +20,9 @@ const FormEdicionCategoria = () => {
             }
             const respuesta = await CategoriaServicios.modificarCategoria(id, datosModificados);
             console.log(respuesta);
-            if (respuesta.status === 200) {
-                console.log("Enviando a ruta nueva");
-                navigateTo("/categorias");
-            }
-            else {
-                
-            }
+            navigateTo("/categorias");
         } catch (error) {
-            
+
         }
     }
 
@@ -53,13 +47,13 @@ const FormEdicionCategoria = () => {
                 setActivo(respuesta.data.activo)
             }
         } catch (error) {
-            console.log("Error. "+error);
+            console.log("Error. " + error);
         }
     }
 
     useEffect(() => {
-       cargarCategoria(); 
-    },[])
+        cargarCategoria();
+    }, [])
 
     return (
         <div className="container">
