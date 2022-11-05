@@ -143,7 +143,7 @@ const ListaFormCategorias = () => {
                                                 <td>{categoria.imagen}</td>
                                                 <td>{categoria.activo ? "Sí" : "No"}</td>
                                                 <td>
-                                                    <a href={"/categorias/form/" + categoria._id} className="btn btn-sm btn-success">Editar</a>
+                                                    <a href={"/categorias/form/" + categoria._id} className="btn btn-sm btn-warning">Editar</a>
                                                     <button onClick={() => { confirmarBorrado(categoria._id, categoria.nombre) }} className="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#modalBorrar">Eliminar</button>
                                                 </td>
                                             </tr>
