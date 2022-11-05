@@ -124,7 +124,7 @@ const ListadoClientes = () => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" onClick={borrarCliente} className="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
+                            <button type="button" onClick={borrarCliente} className="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
                         </div>
                     </div>
                 </div>
