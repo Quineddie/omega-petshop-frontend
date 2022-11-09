@@ -167,7 +167,7 @@ const ListaFormCategorias = () => {
                             <label className="form-check-label" htmlFor="activo">Activo</label>
                         </div>
                         <div className="mb-3 col-2">
-                            <button className="btn btn-success btn-sm me-2">Guardar</button>
+                            <button className="btn btn-primary btn-sm me-2">Guardar</button>
                         </div>
                     </div>
                 </form>
