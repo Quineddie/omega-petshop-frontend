@@ -4,16 +4,16 @@ import { useNavigate } from "react-router-dom";
 import CategoriaServicios from "../../servicios/CategoriaServicios";
 import ProductoServicios from "../../servicios/ProductoServicios";
 
-const FormProducto = () => { 
+const FormProducto = () => {
 
     const navigateTo = useNavigate();
-    const [ nombre, setNombre ] = useState("");
-    const [ marca, setMarca ] = useState("");
-    const [ precio, setPrecio ] = useState(0);
-    const [ categoria, setCategoria ] = useState("");
-    const [ imagen, setImagen ] = useState("");
-    const [ disp, setDisp ] = useState(false);
-    const [ listaCategorias, setListaCategorias ] = useState([]);
+    const [nombre, setNombre] = useState("");
+    const [marca, setMarca] = useState("");
+    const [precio, setPrecio] = useState(0);
+    const [categoria, setCategoria] = useState("");
+    const [imagen, setImagen] = useState("");
+    const [disp, setDisp] = useState(false);
+    const [listaCategorias, setListaCategorias] = useState([]);
 
     const cargarCategorias = async () => {
         try {
@@ -24,7 +24,7 @@ const FormProducto = () => {
         }
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         cargarCategorias();
     }, [])
 
@@ -35,9 +35,9 @@ const FormProducto = () => {
                 nombre: nombre,
                 marca: marca,
                 precio: parseInt(precio),
-                categorias: [ categoria ],
-                imagen :imagen,
-                disp :disp
+                categorias: [categoria],
+                imagen: imagen,
+                disp: disp
             }
             const respuesta = await ProductoServicios.guardarProducto(producto);
             navigateTo("/productos");
