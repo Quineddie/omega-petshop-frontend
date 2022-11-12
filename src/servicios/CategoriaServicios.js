@@ -3,27 +3,27 @@ import axios from "axios";
 const CategoriaServicios = {};
 
 CategoriaServicios.listarCategorias = () => {
-    return axios.get("http://localhost:8000/api/categorias");
+    return axios.get("https://petshop-omega-api.herokuapp.com/api/categorias");
 }
 
 CategoriaServicios.buscarCategorias = (busqueda) => {
-    return axios.get("http://localhost:8000/api/categorias?q="+busqueda);
+    return axios.get("https://petshop-omega-api.herokuapp.com/api/categorias?q="+busqueda);
 }
 
 CategoriaServicios.cargarCategoria = (id) => {
-    return axios.get("http://localhost:8000/api/categorias/"+id);
+    return axios.get("https://petshop-omega-api.herokuapp.com/api/categorias/"+id);
 }
 
 CategoriaServicios.modificarCategoria = (id, body) => {
-    return axios.put("http://localhost:8000/api/categorias/"+id, body);
+    return axios.put("https://petshop-omega-api.herokuapp.com/api/categorias/"+id, body);
 }
 
 CategoriaServicios.guardarCategorias = (categoria) => {
-    return axios.post("http://localhost:8000/api/categorias", categoria);
+    return axios.post("https://petshop-omega-api.herokuapp.com/api/categorias", categoria);
 }
 
 CategoriaServicios.borrarCategoria = (id) => {
-    return axios.delete("http://localhost:8000/api/categorias/"+id);
+    return axios.delete("https://petshop-omega-api.herokuapp.com/api/categorias/"+id);
 }
 
 export default CategoriaServicios;
