@@ -16,8 +16,8 @@ const Header = () => {
                 <button type="button" className="btn btn-outline-primary me-2">Login</button>
                 <a href="/clientes/form" type="button" className="btn btn-warning">Sign-up</a>
             </div>
-        
-           
+
+
         </header >
     );
 }

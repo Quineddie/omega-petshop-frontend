@@ -5,8 +5,7 @@ import CategoriaServicios from "../../servicios/CategoriaServicios";
 import ProductoServicios from "../../servicios/ProductoServicios";
 
 const FormProducto = () => {
-
-    const navigateTo = useNavigate();
+    const navigateTo = useNavigate();    
     const [nombre, setNombre] = useState("");
     const [marca, setMarca] = useState("");
     const [precio, setPrecio] = useState(0);
